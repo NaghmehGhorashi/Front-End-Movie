@@ -20,7 +20,7 @@ const ImageSlider = () => {
     slidesToScroll: 1,    
     autoplay: true,        
     autoplaySpeed: 300,
-    arrows: false,  // Disables next and previous buttons
+    arrows: false, 
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: dots => (
         <div>
@@ -38,11 +38,11 @@ const ImageSlider = () => {
 
   return (
     <Slider {...settings} >
-        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner1} alt="Slide 1" /></div>
-        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner2} alt="Slide 2" /></div>
-        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner3} alt="Slide 3" /></div>
-        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner4} alt="Slide 4" /></div>
-        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner5} alt="Slide 5" /></div>
+        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner1} alt="Movie,12 angry man" /></div>
+        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner2} alt="Movie,Shining" /></div>
+        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner3} alt="Movie,Shutter island" /></div>
+        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner4} alt="Movie,Interstellar" /></div>
+        <div className="md:px-5"><img className="border-2 rounded-3xl h-50 md:h-150 border-amber-600 w-full" src={banner5} alt="Movie,Gravity" /></div>
     </Slider>
   );
 };

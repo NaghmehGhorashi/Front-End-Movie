@@ -3,6 +3,9 @@ import axios from "axios";
 
 const client = axios.create({
   baseURL: "http://localhost:3000/api",
+  headers: {
+    "x-api-key": "hyperislandCourse06",
+  },
 });
 
 export async function MoviesApi() {
@@ -67,6 +70,7 @@ export async function createProduct(params) {
   });
   return response;
 }
+
 export async function updateProduct(id, newProduct) {
   const response = await client({
     method: "patch",

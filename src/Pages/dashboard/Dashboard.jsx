@@ -7,6 +7,7 @@ import SelectComponent from "../../Components/CoreComponents/select/select";
 import { createProduct } from "../../Services/ProductApi";
 import { MoviesApi } from "../../Services/ProductApi";
 import {updateProduct} from "../../Services/ProductApi";
+import { styled } from "@mui/material";
 
 function Dashboard() {
   const [searchId, setSearchId] = useState("");
@@ -16,8 +17,8 @@ function Dashboard() {
   const [original_title, setOriginal_title] = useState(""); 
   const [backdrop_path, setBackdrop_path] = useState(""); 
   const [originalLanguage, setOriginalLanguage] = useState(""); 
-  const [overview, setOverview] = useState(""); // Overview state
-  const [vote_count, setVote_count] = useState(""); // Vote count state
+  const [overview, setOverview] = useState("");
+  const [vote_count, setVote_count] = useState("");
 
   const [newProduct, setNewProduct] = useState({
     popularity: "",
@@ -71,20 +72,36 @@ function Dashboard() {
   };
 
   
-  const handelSearch = () => {
-    const searchedItem = id.find((item) => item.id === parseInt(searchId));
-    if (searchedItem) {
-      setPopularity(searchedItem.popularity);
-      setRelease_date(searchedItem.release_date);
-      setOriginal_title(searchedItem.original_title);
-      setBackdrop_path(searchedItem.backdrop_path);
-      setOriginalLanguage(searchedItem.original_language);
-      setOverview(searchedItem.overview);
-      setVote_count(searchedItem.vote_count);
-    } else {
-      alert("Movie not found");
-    }
-  };
+const handelSearch = () => {
+  const searchedItem = id.find((item) => item.id === Number(searchId));
+  if (searchedItem) {
+    setPopularity(searchedItem.popularity);
+    setRelease_date(searchedItem.release_date);
+    setOriginal_title(searchedItem.original_title);
+    setBackdrop_path(searchedItem.backdrop_path);
+    setOriginalLanguage(searchedItem.original_language);
+    setOverview(searchedItem.overview);
+    setVote_count(searchedItem.vote_count);
+
+    // اینجا مقدار newProduct را به‌روزرسانی می‌کنیم تا id تنظیم شود
+    setNewProduct((prevProduct) => ({
+      ...prevProduct,
+      id: searchedItem.id,  // مقدار id را تنظیم می‌کنیم
+      popularity: searchedItem.popularity,
+      backdrop_path: searchedItem.backdrop_path,
+      original_title: searchedItem.original_title,
+      overview: searchedItem.overview,
+      original_language: searchedItem.original_language,
+      release_date: searchedItem.release_date,
+      vote_average: searchedItem.vote_average,
+      vote_count: searchedItem.vote_count,
+      movie_id: searchedItem.id,
+    }));
+  } else {
+    alert("Movie not found");
+  }
+};
+
 
   const handelFileChange = (e) => {
   const file = e.target.files[0];
@@ -151,11 +168,7 @@ function Dashboard() {
               value={newProduct.original_title || original_title} 
             />
           </div>
-        
-
-
-
-          <div>
+         <div>
             <label className="block mb-1">Release Date:</label>
             <Input
               onChange={handelChange}
@@ -171,17 +184,17 @@ function Dashboard() {
             <SelectComponent
              options={ [
   { value: "1", label: "English" },
-  { value: "2", label: "Spanish" },
-  { value: "3", label: "Swedish" },
-  { value: "4", label: "Finnish" },
-  { value: "5", label: "Danish" },
+  { value: "2", label: "Spanish (Disabled)",isDisabled: true },
+  { value: "3", label: "Swedish (Disabled)",isDisabled: true },
+  { value: "4", label: "Finnish (Disabled)" ,isDisabled: true},
+  { value: "5", label: "Danish (Disabled)" ,isDisabled: true},
  
  
  
 ]} 
               value={ [
                 { value: "1", label: "English" },
-  { value: "2", label: "Spanish" },
+                { value: "2", label: "Spanish" },
   { value: "3", label: "Swedish" },
   { value: "4", label: "Finnish" },
   { value: "5", label: "Danish" },]} 
@@ -280,7 +293,8 @@ function Dashboard() {
 
         </div>
 
-        <div className="flex mt-5 justify-center" ><Buttom className="mt-8 rounded-md h-10" onClick={handelCreateProduct}>
+        <div className="flex mt-5 justify-center" >
+        <Buttom className="mt-8 rounded-md h-10" onClick={handelCreateProduct}>
           Submit
         </Buttom>
         <Buttom className="mt-8 rounded-md h-10" onClick={handleUpdateProduct}>
