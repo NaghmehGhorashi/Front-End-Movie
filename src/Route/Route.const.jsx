@@ -6,6 +6,7 @@ import Layout from "../Components/ShareComponents/Layout/Layout.jsx"
 import Login from "../Pages/login/Login.jsx"
 import Dashboard from "../Pages/dashboard/Dashboard.jsx"
 import Category from "../Pages/category/Category.jsx"
+import Privacy from "../Pages/Privacy/Privacy.jsx"
 
 
 
@@ -43,6 +44,11 @@ export const routes=[
 {
     path : "/category",
     element: <Layout><Category/></Layout>,
+    isprivate:false
+},
+{
+    path : "/Privacy",
+    element: <Layout><Privacy/></Layout>,
     isprivate:false
 }
 ]

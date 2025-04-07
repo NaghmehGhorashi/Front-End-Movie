@@ -12,11 +12,11 @@ function MostVotedMovies() {
     return (
         <div className="border-2 bg-neutral-700 rounded-2xl border-amber-500 md:mt-1 h-75 overflow-x-auto flex flex-nowrap scroll-smooth scrollbar-hide">
             {data
-                .filter(item => item.vote_count > 200) 
+                .filter(item => item.vote_average > 5) 
                 .map((item) => (
                     <div key={item.id} className="mx-5 my-5 min-w-40 border border-amber-400 rounded-md">
                         <img
-                            src={item.backdrop_path}
+                            src={item.poster_path}
                             alt={`Background image of ${item.original_title}`}
                             className="h-50 border border-amber-400"
                         />

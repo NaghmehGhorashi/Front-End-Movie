@@ -11,7 +11,9 @@ function Home() {
         <section aria-label="Movie Slider" className="mt-5">
           <Slider />
         </section>
+        
       </Wrapper>
+    
     </main>
   );
 }

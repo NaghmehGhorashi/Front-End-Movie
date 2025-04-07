@@ -13,7 +13,7 @@ function Product({ poster_path, original_title, vote_count }) {
       }}
       className="border border-orange-400 rounded-lg w-40 h-75 p-2 shadow-md shadow-blue-300"
     >
-      <img src={poster_path} alt="" className="w-full h-40 object-contain" />
+      <img src={poster_path} alt="poster_path" className="w-full h-40 object-contain" />
       <p className="text-white mt-5 text-center">
         {original_title.split(" ").slice(0, 2).join(" ")}
       </p>

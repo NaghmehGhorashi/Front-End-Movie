@@ -31,7 +31,7 @@ function Dashboard() {
     vote_average: null,
     vote_count: "",
     adult: 0,
-    movie_id: null
+    movie_id: 55
   });
 
  

@@ -9,7 +9,7 @@ function Category() {
        
         <section aria-labelledby="most-popular-movies">
           <h2 className="text-2xl font-bold text-amber-50">
-            Most Popular Movie
+            Most Popular Movie(vote average)
           </h2>
           <MostVotedMovies />
         </section>
@@ -17,7 +17,7 @@ function Category() {
      
         <section aria-labelledby="popular-this-week" className="mt-6">
           <h2 className="text-xl font-bold text-amber-50">
-            Popular of This Week
+            Recent Movie
           </h2>
           <MoviesByPopularity />
         </section>
