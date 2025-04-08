@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter } from "react-router-dom";
 import RouteApp from "./Route/RouteApp";
 import AppContextProvider from "./Context/AppContextProvider";
+import PrivacyConsent from './Components/ShareComponents/privacy/PrivacyConsent';
 
 function App() {
   
@@ -39,6 +40,7 @@ function App() {
     <AppContextProvider>
       <BrowserRouter>
         <RouteApp />
+        <PrivacyConsent />
       </BrowserRouter>
     </AppContextProvider>
   );
