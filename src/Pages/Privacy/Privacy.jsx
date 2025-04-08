@@ -4,8 +4,9 @@ function Privacy() {
   return (
     <div>
       <Wrapper>
+         <h2 className="text-xl text-amber-50"><strong>Privacy Notice :</strong></h2><br />
         <p className="text-xl text-amber-50">
-            Privacy Notice :<br />
+           
 
 We care deeply about your privacy and are fully committed to being transparent about how we collect, use, and protect your data.<br />
 

@@ -57,7 +57,7 @@ return (
         </div>
       </>
     ) : (
-      <p className="text-white flex justify-center mt-20 text-3xl">No Item In Cart</p>
+      <p className="text-white flex justify-center mb-90 mt-40 md:mt-70 text-3xl md:mb-110">No Item In Cart</p>
     )}
   </div>
 );

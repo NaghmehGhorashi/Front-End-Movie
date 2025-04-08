@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import FavoriteButton from "../../CoreComponents/FavoriteButton/FavoriteButton"; 
 import Button from "../../CoreComponents/Button/Button";
 
-function Product({ poster_path, original_title, vote_count }) {
+function Product({ poster_path,original_title,vote_count }) {
   return (
     <motion.div
       whileHover={{
@@ -18,7 +18,10 @@ function Product({ poster_path, original_title, vote_count }) {
         {original_title.split(" ").slice(0, 2).join(" ")}
       </p>
       <div className="flex justify-between">
-        <p className="text-white mt-1 text-sm">Price: {vote_count}$</p>
+        <p className="text-white mt-1 text-sm">
+  Price: {vote_count || 'N/A'}$
+</p>
+
         <div className="mt-1.5"><FavoriteButton /></div>
       </div>
  <Button className="text-sm">Add to cart</Button>

@@ -9,11 +9,12 @@ function PageFooter() {
       <Link className="text-amber-50 text-md font-medium mr-4" > Tech blog </Link>
       <Link className="text-amber-50 text-md font-medium mr-4" >Terms & Conditions</Link>
       <Link className="text-amber-50 text-md font-medium mr-4" to="/Privacy">Privacy Notice</Link>
+      <Link className="text-amber-50 text-md font-medium mr-4" >Contact Us</Link>
     </div>
       
-      <div className="text-amber-50 text-2xl flex md:mr-2 ">
-        <AiOutlineLinkedin />
-        <FaInstagram /> 
+      <div className="text-amber-50 text-2xl flex md:mr-2">
+        <AiOutlineLinkedin className="text-amber-50  flex md:mr-2"/>
+        <FaInstagram className="text-amber-50  flex md:mr-2 "/> 
       </div>
     </div>
   )

@@ -19,7 +19,7 @@ function Dashboard() {
   const [originalLanguage, setOriginalLanguage] = useState(""); 
   const [overview, setOverview] = useState("");
   const [vote_count, setVote_count] = useState("");
-
+  const [movie_id, setMovie_id] = useState("");
   const [newProduct, setNewProduct] = useState({
     popularity: "",
     backdrop_path: "",
@@ -31,7 +31,7 @@ function Dashboard() {
     vote_average: null,
     vote_count: "",
     adult: 0,
-    movie_id: 55
+    movie_id: ""
   });
 
  
@@ -82,11 +82,11 @@ const handelSearch = () => {
     setOriginalLanguage(searchedItem.original_language);
     setOverview(searchedItem.overview);
     setVote_count(searchedItem.vote_count);
-
-    // اینجا مقدار newProduct را به‌روزرسانی می‌کنیم تا id تنظیم شود
+    setMovie_id(searchedItem.movie_id);
+  
     setNewProduct((prevProduct) => ({
       ...prevProduct,
-      id: searchedItem.id,  // مقدار id را تنظیم می‌کنیم
+      id: searchedItem.id, 
       popularity: searchedItem.popularity,
       backdrop_path: searchedItem.backdrop_path,
       original_title: searchedItem.original_title,
@@ -148,11 +148,22 @@ const handelSearch = () => {
         </div>
 
         <div className="grid md:grid-cols-2 mt-15 lg:grid-cols-4 gap-4 text-amber-50">
+            <div>
+            <label className="block mb-1">Movie ID:</label>
+            <Input
+              onChange={handelChange}
+              className="w-60 h-10"
+              type="text"
+              name="movie_id"
+              value={newProduct.movie_id || movie_id} 
+            />
+          </div>
+         
           <div>
             <label className="block mb-1">Price:</label>
             <Input
               onChange={handelChange} 
-              className="w-70 h-10"
+              className="w-60 h-10"
               type="text"
               name="vote_count" 
               value={newProduct.vote_count || vote_count} 
@@ -282,7 +293,7 @@ const handelSearch = () => {
             <label className="block mb-1">Description:</label>
             <Textarea
               onChange={handelChange}
-              className="w-[500px] h-30"
+              className="w-[350px] h-50"
               name="overview"
               value={newProduct.overview || overview} 
             />
@@ -319,33 +330,3 @@ export default Dashboard;
 
 
 
-
-
-
-
-// // تابع آپدیت داده‌ها در API
-// const handleUpdateProduct = async () => {
-//   try {
-//     if (!newProduct.movie_id) {
-//       alert("Please search for a movie first.");
-//       return;
-//     }
-    
-//     const result = await updateProduct(newProduct.movie_id, newProduct);
-//     console.log("Updated product:", result);
-//     alert("Movie updated successfully!");
-//   } catch (error) {
-//     console.error("Error while updating product:", error);
-//   }
-// };
-
-// return (
-//   <div>
-//     <Buttom className="mt-8 rounded-md h-10" onClick={handleUpdateProduct}>
-//       Update
-//     </Buttom>
-//   </div>
-// );
-// export const updateProduct = async (id, updatedData) => {
-//   return await axios.put(`https://your-api-endpoint/products/${id}`, updatedData);
-// };
