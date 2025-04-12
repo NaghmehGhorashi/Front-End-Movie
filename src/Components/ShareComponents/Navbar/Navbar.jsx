@@ -56,6 +56,7 @@ function Navbar() {
           <ul className="flex flex-col md:flex-row md:items-center md:space-x-6 text-lg text-center">
             {isLogin && (
               <Link
+                tabIndex="0"
                 to="/dashboard"
                 className={`block md:inline ${
                   _location.pathname === "/dashboard" ? "text-white" : "text-orange-400"
@@ -64,10 +65,11 @@ function Navbar() {
                 Dashboard
               </Link>
             )}
-            <Link to="/" className={_location.pathname === "/" ? "text-white font-bold" : "text-orange-400"}>
+            <Link tabIndex="0" to="/" className={_location.pathname === "/" ? "text-white font-bold" : "text-orange-400"}>
               Home
             </Link>
             <Link
+               tabIndex="0"
                to="/movies"
                className={_location.pathname === "/movies" ? "text-white font-bold" : "text-orange-400"}
                aria-label="Browse Movies" 
@@ -78,6 +80,7 @@ function Navbar() {
              </Link>
 
             <Link
+              tabIndex="0"
               to="/category"
               className={_location.pathname === "/category" ? "text-white font-bold" : "text-orange-400"}
             >
@@ -88,7 +91,7 @@ function Navbar() {
 
         {/* Cart & Login/Logout */}
         <div className="flex items-center space-x-4">
-          <Link to="/cart" className="relative">
+          <Link tabIndex="0" to="/cart" className="relative">
             <FaOpencart className="w-8 h-8 text-orange-400" />
             {cartQty() > 0 && (
               <span className="bg-rose-700 text-sm text-amber-50 absolute size-4.5 text-center -top-3 rounded-full -right-3">
@@ -102,7 +105,7 @@ function Navbar() {
               Logout
             </button>
           ) : (
-            <Link to="/login" className="text-sm text-white">
+            <Link tabIndex="0" to="/login" className="text-sm text-white">
               Login
             </Link>
           )}

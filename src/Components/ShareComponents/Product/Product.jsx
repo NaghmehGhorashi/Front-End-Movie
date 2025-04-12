@@ -19,7 +19,7 @@ function Product({ poster_path,original_title,vote_count }) {
       </p>
       <div className="flex justify-between">
         <p className="text-white mt-1 text-sm">
-  Price: {vote_count || 'N/A'}$
+  Price: {vote_count || 'N/A'} kr
 </p>
 
         <div className="mt-1.5"><FavoriteButton /></div>
