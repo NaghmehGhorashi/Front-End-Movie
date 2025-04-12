@@ -7,6 +7,7 @@ import SelectComponent from "../../Components/CoreComponents/select/select";
 import { createProduct } from "../../Services/ProductApi";
 import { MoviesApi } from "../../Services/ProductApi";
 import {updateProduct} from "../../Services/ProductApi";
+import { color } from "framer-motion";
 
 
 function Dashboard() {
@@ -31,6 +32,8 @@ function Dashboard() {
     adult: 0,
     movie_id: ""
   });
+  
+
 
  
   const handelChange = (e) => {
@@ -269,15 +272,21 @@ const handelSearch = () => {
 
   
  
-<div>  <input
+<div>  
+  <input
     type="file"
     id="fileUpload"
     onChange={handelFileChange}
     className="hidden"
+    placeholder="Disabled"
+   
+    
+   
   />
  <button
     onClick={() => document.getElementById("fileUpload").click()}
-    className="bg-orange-500 md:mt-8 text-white px-4 py-2 rounded"
+    className="bg-neutral-500 md:mt-8 text-white px-4 py-2 rounded"
+     disabled={true}
   >
     Upload
   </button></div>

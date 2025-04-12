@@ -137,20 +137,36 @@ function Movie() {
                 <Button className="bg-blue-300 px-4 rounded-lg mt-4">Add</Button>
               </div>
             </section>
+ 
+            
+            
+                <div className="text-center flex flex-wrap gap-4 justify-center mt-5 border border-orange-400 rounded-lg p-4">
+                <img
+                    src={movie.casts_profile}
+                   
+                    className="w-20 h-20 border border-orange-400 rounded-full mx-auto"
+                  
+                  />
+                  <p className="text-white mt-2">{movie.castoriginal_name}</p>
+                </div>
+          
 
-            <section className="flex flex-wrap gap-4 justify-center mt-5 border border-orange-400 rounded-lg p-4">
+
+
+
+            {/* <section className="flex flex-wrap gap-4 justify-center mt-5 border border-orange-400 rounded-lg p-4">
               {movie.casts?.slice(0, 12).map((cast) => (
                 <div key={cast.id} className="text-center">
-                  <img
-                    src={cast.profile_path || "https://via.placeholder.com/100"}
-                    alt={`Actor: ${cast.name}`}
+                <img
+                    src={cast.casts_profile}
+                    alt={`Actor: ${cast.castoriginal_name}`}
                     className="w-20 h-20 border border-orange-400 rounded-full mx-auto"
                     loading="lazy"
                   />
-                  <p className="text-white mt-2">{cast.name}</p>
+                  <p className="text-white mt-2">{cast.castoriginal_name}</p>
                 </div>
               ))}
-            </section>
+            </section> */}
           </motion.article>
         ) : (
           <p className="text-white text-center mt-10">Movie not found</p>
