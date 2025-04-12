@@ -17,8 +17,6 @@ export async function MoviesApi() {
       console.error("Error Response:", error.response);
     } else if (error.request) {
       console.error("Error Request:", error.request);
-    } else {
-      console.error("API Fetch Error:", error.message);
     }
   }
 }
@@ -32,8 +30,6 @@ export async function MovieApi(id) {
       console.error("Error Response:", error.response);
     } else if (error.request) {
       console.error("Error Request:", error.request);
-    } else {
-      console.error("API Fetch Error:", error.message);
     }
   }
 }
@@ -47,8 +43,6 @@ export async function checkDiscount({ code }) {
       console.error("Error Response:", error.response);
     } else if (error.request) {
       console.error("Error Request:", error.request);
-    } else {
-      console.error("API Fetch Error:", error.message);
     }
   }
 }
