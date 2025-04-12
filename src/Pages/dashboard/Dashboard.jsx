@@ -7,7 +7,7 @@ import SelectComponent from "../../Components/CoreComponents/select/select";
 import { createProduct } from "../../Services/ProductApi";
 import { MoviesApi } from "../../Services/ProductApi";
 import {updateProduct} from "../../Services/ProductApi";
-import { styled } from "@mui/material";
+
 
 function Dashboard() {
   const [searchId, setSearchId] = useState("");
@@ -22,9 +22,7 @@ function Dashboard() {
   const [movie_id, setMovie_id] = useState("");
   const [newProduct, setNewProduct] = useState({
     popularity: "",
-    backdrop_path: "",
     original_title: "",
-    poster_path: null,
     overview: "",
     original_language: "",
     release_date: "",
