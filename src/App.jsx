@@ -1,24 +1,27 @@
-
 import { BrowserRouter } from "react-router-dom";
 import RouteApp from "./Route/RouteApp";
 import AppContextProvider from "./Context/AppContextProvider";
-import PrivacyConsent from './Components/ShareComponents/privacy/PrivacyConsent';
+import { TrackingConsentProvider } from "../src/Components/ShareComponents/TrackingConsentContext/TrackingConsentContext";
+import PrivacyConsent from '../src/Components/ShareComponents/privacy/PrivacyConsent';
+import MatomoTracker from "../src/Components/ShareComponents/matomo/MatomoTracker";
+import MatomoPageView from "../src/Components/ShareComponents/matomoPageView/MatomoPageView.jsx"
 
 function App() {
-  const permission = localStorage.getItem("privacyConsent");
-
   return (
     <AppContextProvider>
-      <BrowserRouter>
-        <RouteApp />
-        <PrivacyConsent />
-      </BrowserRouter>
+      <TrackingConsentProvider>
+        <BrowserRouter>
+          <RouteApp />
+          <MatomoTracker />
+          <MatomoPageView />
+          <PrivacyConsent />
+        </BrowserRouter>
+      </TrackingConsentProvider>
     </AppContextProvider>
-  );
+  )
 }
 
 export default App;
-
 
 
 

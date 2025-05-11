@@ -27,10 +27,13 @@ export async function MovieApi(id) {
     return response;
   } catch (error) {
     if (error.response) {
-      console.error("Error Response:", error.response);
+      console.error("❌ Error Response:", error.response);
     } else if (error.request) {
-      console.error("Error Request:", error.request);
+      console.error("❌ Error Request:", error.request);
+    } else {
+      console.error("❌ Unexpected Error:", error.message);
     }
+    return null;
   }
 }
 
