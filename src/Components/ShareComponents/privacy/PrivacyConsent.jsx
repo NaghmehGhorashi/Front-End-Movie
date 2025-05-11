@@ -22,7 +22,11 @@ function PrivacyConsent() {
     var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
     g.async = true;
     g.src = 'https://cdn.matomo.cloud/naghmeh.matomo.cloud/container_3S1W0JGs.js';
+   g.onload = () => console.log("✅ Matomo script loaded successfully.");
+g.onerror = () => console.log("❌ Failed to load Matomo script.");
     s.parentNode.insertBefore(g, s);
+   
+
 
     
     const screenResolution = `${window.screen.width}x${window.screen.height}`;

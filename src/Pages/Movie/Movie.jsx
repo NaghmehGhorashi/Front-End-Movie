@@ -134,7 +134,7 @@ function Movie() {
                     -
                   </Button>
                 </div>
-                <Button className="bg-blue-300 px-4 rounded-lg mt-4">Add</Button>
+                <Button className="px-4 rounded-lg mt-4">Add</Button>
               </div>
             </section>
  
